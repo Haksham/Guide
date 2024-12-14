@@ -4,7 +4,7 @@ import { HiPencilAlt } from "react-icons/hi";
 
 const gettopics = async() => {
   
-  const res = await fetch("https://guide-taupe.vercel.app/api/topicses", {cache: "no-store"});
+  const res = await fetch("https://lifes-guide.vercel.app/api/topicses", {cache: "no-store"});
 
   if (!res.ok) {
     throw new Error("Failed to fetch topics broooooo");
