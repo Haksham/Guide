@@ -3,7 +3,7 @@ import Remove from "./remove";
 import { HiPencilAlt } from "react-icons/hi";
 
 const gettopics = async() => {
-  try{
+  
   const res = await fetch("http://localhost:3000/api/topicses", {cache: "no-store"});
 
   if (!res.ok) {
@@ -11,9 +11,7 @@ const gettopics = async() => {
   }
 
   return res.json()
-  }catch(error){
-    console.log("error hai bhai---> ", error);
-  }
+  
 }
 
 export default async function Topics(){

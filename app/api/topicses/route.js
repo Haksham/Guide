@@ -7,14 +7,14 @@ export async function POST(request) {
   await connect();
 
   await topic.create({title,description}); 
-  return NextResponse.json({message:"Topic created"},{status:201});
+  return NextResponse.json({message:"Topic created"},{status:201, revalidate: false});
 }
 
 
 export async function GET() {
   await connect();
   const topics = await topic.find();
-  return NextResponse.json({topics});
+  return NextResponse.json({topics}, {revalidate: false});
 }
 
 export async function DELETE(request) {
@@ -22,6 +22,6 @@ export async function DELETE(request) {
   const id = searchParams.get("id");
   await connect();
   await topic.findByIdAndDelete(id);
-  return NextResponse.json({message:"Topic deleted"}, {status:200});
+  return NextResponse.json({message:"Topic deleted"}, {status:200,revalidate: false});
 }
 
