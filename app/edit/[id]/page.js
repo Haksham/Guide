@@ -3,7 +3,7 @@ import Edit from "@/components/editpage";
 const gettopic = async (id) => {
 
   try {
-    const res = await fetch(`http://localhost:3000/api/topicses/${id}`,{cache: "no-store" ,});
+    const res = await fetch(`https://guide-taupe.vercel.app/api/topicses/${id}`,{cache: "no-store" ,});
     
     if(!res.ok){
       throw new Error("Failed to fetch topic");

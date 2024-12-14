@@ -14,7 +14,7 @@ export default function Edit({id,title,description}){
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3000/api/topicses/${id}`,{
+      const res = await fetch(`https://guide-taupe.vercel.app/api/topicses/${id}`,{
       method:"PUT",
       body:JSON.stringify({newtitle,newdescription}),
       headers:{

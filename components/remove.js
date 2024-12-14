@@ -7,7 +7,7 @@ export default function Remove({id}) {
     const confirm = window.confirm("Are you sure you want to delete this topic?");
     if(!confirm) return;
     else{
-    await fetch(`http://localhost:3000/api/topicses?id=${id}`, {method: "DELETE"});
+    await fetch(`https://guide-taupe.vercel.app/api/topicses?id=${id}`, {method: "DELETE"});
     window.location.reload();
     }
   }
